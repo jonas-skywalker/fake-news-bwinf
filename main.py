@@ -17,7 +17,3 @@ class Graph:
                 nodes.append(tuple(map(int, line_list)))
 
             return nodes
-
-g = Graph()
-
-g.parse_notes(r".\jugendforumInformatik2020\problem\input\easy_1.graph")
