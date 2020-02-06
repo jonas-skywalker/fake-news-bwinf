@@ -1,6 +1,3 @@
-def main():
-    pass
-
-
-if __name__ == '__main__':
-    main()
+class Graph:
+    def __init__(self):
+        self.nodes = dict()
