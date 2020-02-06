@@ -4,8 +4,8 @@ import time
 
 outdirectory = r".\output"
 gr = graph.Graph.create_graph(r".\jugendforumInformatik2020\problem\input\hard_1.graph")
-for i in range(1, 6):
-    for prefix in ["easy", "medium", "hard"]:
+for i in range(5, 6):
+    for prefix in ["hard"]:
         file_name = r".\jugendforumInformatik2020\problem\input" + "\\" + prefix + "_" + str(i) + ".graph"
         gr = graph.Graph.create_graph(file_name)
         tapped = list(algorithm.tap_network_of_trumpf(gr))
