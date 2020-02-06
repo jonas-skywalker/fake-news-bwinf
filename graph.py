@@ -2,6 +2,9 @@ class Graph:
     def __init__(self, nodes):
         self.nodes = nodes
 
+    def node_neighbour_pairs(self):
+        return self.nodes.items()
+
     def create_graph(file):
         edges = parse_nodes(file)
         nodes_dict = dict()
