@@ -9,11 +9,11 @@ def tap_network_of_trumpf(gr):
         del by_connectivity[0]
 
         tapped.add(vertex)
-        for ((v, neighs), index) in enumerate(by_connectivity):
+        for (index, (v, neighs)) in enumerate(by_connectivity):
             if gr.is_neighbour(v, vertex):
                 by_connectivity[index] = (v, neighs - 1)
 
-        by_connectivity.sort(key=lambda x: x[1], reversed=True)
+        by_connectivity.sort(key=lambda x: x[1], reverse=True)
     return tapped
 
 def ordered_connectivity_list(graph):
