@@ -1,10 +1,14 @@
 class Graph:
     def __init__(self, nodes):
-        self.nodes = nodes
+        self._nodes = nodes
 
     def node_neighbour_pairs(self):
-        return self.nodes.items()
+        return self._nodes.items()
 
+    def nodes(self):
+        return self._nodes.keys()
+
+    @staticmethod
     def create_graph(file):
         edges = parse_nodes(file)
         nodes_dict = dict()
@@ -18,21 +22,21 @@ class Graph:
         return Graph(nodes_dict)
 
     def neighbours(self, v):
-        return self.nodes[v]
+        return self._nodes[v]
 
     def is_neighbour(self, v, u):
         return u in self.neighbours(v)
 
     def ensure(self, *vs):
         for v in vs:
-            if v not in self.nodes:
-                self.nodes[v] = []
+            if v not in self._nodes:
+                self._nodes[v] = []
 
     def add_edge(self, edge):
         (u, v) = edge
         self.ensure(u, v)
-        self.nodes[v].append(u)
-        self.nodes[u].append(v)
+        self._nodes[v].append(u)
+        self._nodes[u].append(v)
 
 def parse_nodes(file):
     with open(file, "r") as infile:
