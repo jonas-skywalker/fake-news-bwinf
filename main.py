@@ -1,5 +1,8 @@
 import graph
 import algorithm
+import time
+
 print("test")
-gr = graph.Graph.create_graph(r".\jugendforumInformatik2020\problem\input\easy_1.graph")
-print(len(algorithm.tap_network_of_trumpf(gr)))
+start = time.time()
+gr = graph.Graph.create_graph(r".\jugendforumInformatik2020\problem\input\hard_5.graph")
+print(len(algorithm.tap_network_of_trumpf(gr)), time.time() - start)
