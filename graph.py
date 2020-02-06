@@ -3,7 +3,7 @@ class Graph:
         self.nodes = nodes
 
     def create_graph(file):
-        edges = parse_notes(file)
+        edges = parse_nodes(file)
         nodes_dict = dict()
         for (v, u) in edges:
             if v not in nodes_dict:
@@ -17,6 +17,9 @@ class Graph:
     def neighbours(self, v):
         return self.nodes[v]
 
+    def is_neighbour(self, v, u):
+        return u in self.neighbours(v)
+
     def ensure(self, *vs):
         for v in vs:
             if v not in self.nodes:
@@ -28,7 +31,7 @@ class Graph:
         self.nodes[v].append(u)
         self.nodes[u].append(v)
 
-def parse_notes(file):
+def parse_nodes(file):
     with open(file, "r") as infile:
         input = infile.readlines()
         head = input[0].split()
