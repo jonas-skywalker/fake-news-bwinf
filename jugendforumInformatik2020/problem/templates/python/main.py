@@ -36,7 +36,7 @@ def readGraph(graph_file):
       addEdge(u, v)
   input.close()
 
-# Ausführen: python main.py <graph-file>
+# Ausführen: python graph.py <graph-file>
 
 if len(sys.argv) != 2:
   sys.exit("Invalid number of arguments")

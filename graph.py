@@ -41,7 +41,6 @@ def parse_notes(file):
         for line in values:
             line_list = line.split()
             nodes.append(tuple(map(int, line_list)))
-
     return nodes
 
-print(create_graph(r".\jugendforumInformatik2020\problem\input\easy_1.graph").nodes)
+print(Graph.create_graph(r".\jugendforumInformatik2020\problem\input\easy_1.graph").nodes)
