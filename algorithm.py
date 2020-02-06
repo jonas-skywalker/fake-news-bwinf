@@ -18,6 +18,6 @@ def tap_network_of_trumpf(gr):
 
 def ordered_connectivity_list(graph):
     with_conn = list()
-    for vertex in graph.nodes:
-        with_conn.append((vertex, len(graph.neighbours(vertex))))
+    for vertex, neighs in graph.node_neighbour_pairs():
+        with_conn.append((vertex, len(neighs)))
     return sorted(with_conn, key=lambda x: x[1], reverse=True)
