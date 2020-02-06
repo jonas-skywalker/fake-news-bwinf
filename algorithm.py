@@ -1,5 +1,3 @@
-import graph
-
 def tap_network_of_trumpf(gr):
     by_connectivity = ordered_connectivity_list(gr)
     tapped = set()
