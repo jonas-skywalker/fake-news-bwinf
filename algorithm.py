@@ -2,7 +2,10 @@ def tap_network_of_trumpf(gr):
     by_connectivity = ordered_connectivity_list(gr)
     tapped = set()
     while by_connectivity:
-        vertex = by_connectivity[0]
+        (vertex, connectivity) = by_connectivity[0]
+        if not connectivity:
+            break
+
         del by_connectivity[0]
 
         tapped.add(vertex)
